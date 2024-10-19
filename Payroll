@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <header>Payroll</header>
+<body>
+<forms>
+<label for="hrate">Hourly rate:</label>
+<input type="text" id="hrate" name="hrate"><br>
+
+
+</label>
+</forms>
+
+
+
+</body>
+</html>

@@ -25,7 +25,7 @@
         }
 
         header img {
-            width: 95%; /* Makes the image stretch to fill the header */
+            width: 50%; /* Makes the image stretch to fill the header */
             height: auto; /* Maintains the aspect ratio */
             max-height: 120px; /* Ensures the image doesn't exceed header height */
         }
@@ -44,18 +44,6 @@
 
         nav a:hover {
             background-color: #555;
-        }
-
-        .hero {
-            background-image: url('hero.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 2em;
         }
 
         main {
@@ -81,10 +69,6 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                font-size: 1.5em; /* Smaller font size on mobile */
-            }
-
             nav a {
                 padding: 10px; /* Reduced padding on smaller screens */
             }
@@ -103,15 +87,11 @@
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#Calc">Calc</a>
+        <a href="#Calc">About Us</a> <!-- Link to About Us section -->
+        <a href="#calc">Calc</a>
         <a href="#Tax">Tax</a>
         <a href="#contact">Contact</a>
     </nav>
-
-    <div class="hero">
-        <h2>Your Success Starts Here</h2>
-    </div>
 
     <main>
         <section id="Calc" class="about-us">
@@ -119,23 +99,19 @@
             <p>Our mission is to empower buyers by providing clear guidance on what to look for when purchasing a new or used vehicle. We aim to assist individuals who may not have extensive knowledge of cars, helping them focus on the critical details that matter most.</p>
         </section>
 
-        <section id="Tax">
-            <h2>Tax</h2>
-            <ul>
-                <li>Consulting</li>
-                <li>Design</li>
-                <li>Development</li>
-            </ul>
+        <section id="calc">
+            <h2>Calc</h2>
+            <p>This section can provide information on calculations related to salaries, financing options, or any other relevant content.</p>
         </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Feel free to get in touch with us at <a href="mailto:info@mywebsite.com">info@mywebsite.com</a>.</p>
+            <p>Feel free to get in touch with us at <a href="mailto:jonathan.navarro02@gmail.com">jonathan.navarro02@gmail.com</a>.</p>
         </section>
     </main>
 
     <footer>
-        &copy; 2024 My Website. All rights reserved.
+        &copy; 2024 Financable. All rights reserved.
     </footer>
 
 </body>

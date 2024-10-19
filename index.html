@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            height: 90px; /* Adjust this height as needed */
+        }
+
+        header img {
+            width: 95%; /* Makes the image stretch to fill the header */
+            height: auto; /* Maintains the aspect ratio */
+            max-height: 120px; /* Ensures the image doesn't exceed header height */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .hero {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 20px; /* Ensure consistent spacing between sections */
+            padding: 20px; /* Padding inside each section for better readability */
+            background-color: white; /* Background for contrast */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            /* Change to regular position for better flow */
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                font-size: 1.5em; /* Smaller font size on mobile */
+            }
+
+            nav a {
+                padding: 10px; /* Reduced padding on smaller screens */
+            }
+
+            main {
+                padding: 10px; /* Reduced padding on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.png" alt="My Website Logo">
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#Calc">Calc</a>
+        <a href="#Tax">Tax</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Your Success Starts Here</h2>
+    </div>
+
+    <main>
+        <section id="Calc" class="about-us">
+            <h2>About Us</h2>
+            <p>Our mission is to empower buyers by providing clear guidance on what to look for when purchasing a new or used vehicle. We aim to assist individuals who may not have extensive knowledge of cars, helping them focus on the critical details that matter most.</p>
+        </section>
+
+        <section id="Tax">
+            <h2>Tax</h2>
+            <ul>
+                <li>Consulting</li>
+                <li>Design</li>
+                <li>Development</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Feel free to get in touch with us at <a href="mailto:info@mywebsite.com">info@mywebsite.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 My Website. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

@@ -2,17 +2,21 @@
 <html lang="en">
 
 <head>
-   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financable</title>
     <style>
-        /* Basic CSS styles   use extension live server by Ritwik Dey to view*/
+        /* Basic CSS styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #979797;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         header {
@@ -22,6 +26,7 @@
             align-items: center;
             padding: 15px;
             height: 90px;
+            width: 100%;
         }
 
         header img {
@@ -34,22 +39,33 @@
             display: flex;
             justify-content: center;
             background-color: #444;
+            width: 100%;
         }
 
         nav a {
             color: white;
-            padding: 15px 20px;
             text-decoration: none;
         }
 
-        nav a:hover {
-            background-color: #555;
+        button {
+            margin: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
         }
 
         main {
             padding: 20px;
-            max-width: 1200px;
-            margin: auto;
+            width: 100%;
+            max-width: 600px;
         }
 
         section {
@@ -65,32 +81,42 @@
             color: rgb(196, 196, 196);
             text-align: center;
             padding: 10px;
+            width: 100%;
         }
 
-        button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+        .input-container {
+            margin-bottom: 10px;
         }
 
-        button:hover {
-            background-color: #218838;
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #revenueResult {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
-            nav a {
-                padding: 10px;
-            }
-
             main {
                 padding: 10px;
             }
-        }
 
+            nav button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -108,55 +134,56 @@
         <a href="geminiBot.html"><button>Gemini</button></a>
     </nav>
 
-<body>
+    <main>
+        <section>
+            <h2>Simple Revenue Calculator</h2>
+        </section>
 
-    <section id="about" class="about-us">
-        <h2>Simple Revenue Calculator</h2>
-    </section>
+        <section>
+            <div class="input-container">
+                <label for="employeeExpenses">Employee Salaries / Expenses ($):</label>
+                <input type="number" id="employeeExpenses" placeholder="Enter total employee expenses" step="0.01">
+            </div>
+        </section>
 
-    <section id="about" class="about-us">
-<div class="input-container">
-    <label for="employeeExpenses">Employee Salaries / Expenses ($):</label>
-    <input type="number" id="employeeExpenses" placeholder="Enter total employee expenses" step="0.01">
-</div>
-</section>
+        <section>
+            <div class="input-container">
+                <label for="businessExpenses">Business Purchases / Expenses ($):</label>
+                <input type="number" id="businessExpenses" placeholder="Enter total business expenses" step="0.01">
+            </div>
+        </section>
 
-<section id="about" class="about-us">
-<div class="input-container">
-    <label for="businessExpenses">Business Purchases / Expenses ($):</label>
-    <input type="number" id="businessExpenses" placeholder="Enter total business expenses" step="0.01">
-</div>
-</section>
+        <section>
+            <div class="input-container">
+                <label for="profits">Profits / Income ($):</label>
+                <input type="number" id="profits" placeholder="Enter total profits" step="0.01">
+            </div>
+        </section>
 
-<section id="about" class="about-us">
-<div class="input-container">
-    <label for="profits">Profits / Income ($):</label>
-    <input type="number" id="profits" placeholder="Enter total profits" step="0.01">
-</div>
-</section>
+        <section>
+            <button class="button" onclick="calculateRevenue()">Calculate Revenue</button>
+            <div id="revenueResult"></div>
+        </section>
+    </main>
 
-<section id="about" class="about-us">
-<button class="button" onclick="calculateRevenue()">Calculate Revenue</button>
+    <footer>
+        <p>&copy; 2024 Financable. All Rights Reserved.</p>
+    </footer>
 
-<div id="revenueResult"></div>
-</section>
+    <script>
+        function calculateRevenue() {
+            const employeeExpenses = parseFloat(document.getElementById('employeeExpenses').value) || 0;
+            const businessExpenses = parseFloat(document.getElementById('businessExpenses').value) || 0;
+            const profits = parseFloat(document.getElementById('profits').value) || 0;
 
-<script>
-    function calculateRevenue() {
-        const employeeExpenses = parseFloat(document.getElementById('employeeExpenses').value) || 0;
-        const businessExpenses = parseFloat(document.getElementById('businessExpenses').value) || 0;
-        const profits = parseFloat(document.getElementById('profits').value) || 0;
+            const totalExpenses = employeeExpenses + businessExpenses;
+            const totalRevenue = profits - totalExpenses;
 
-        const totalExpenses = employeeExpenses + businessExpenses;
-        const totalRevenue = profits - totalExpenses;
-
-        document.getElementById('revenueResult').innerText =
-            `Total Revenue: $${totalRevenue.toFixed(2)}`;
-    }
-</script>
-
-
-
+            document.getElementById('revenueResult').innerText =
+                `Total Revenue: $${totalRevenue.toFixed(2)}`;
+        }
+    </script>
 
 </body>
+
 </html>

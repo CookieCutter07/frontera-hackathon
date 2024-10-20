@@ -201,7 +201,7 @@ body.hide-header .header {
   width: 100%;
   border-radius: 0.135rem;
   background-position: -800px 0;
-  background: linear-gradient(to right, #4285f4, var(--primary-color), #4285f4);
+  background: linear-gradient(to right, #42f47d, var(--primary-color), #70ff9b);
   animation: loading 3s linear infinite;
 }
 .chat-list .message .loading-indicator .loading-bar:last-child {

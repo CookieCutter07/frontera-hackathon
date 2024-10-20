@@ -20,7 +20,7 @@
         <a href="/contact.html"><button>Contact</button></a>
         <a href="/geminiBot.html"><button>Gemini</button></a>
     </nav>
-
+    <section id="about" class="about-us">
     <div class="input-area">
         <h2>Salary Cost Calculator</h2>
 
@@ -33,8 +33,10 @@
         <input type="number" id="hoursWorked" placeholder="Hours Worked" step="0.01">
         
         <button class="button" onclick="calculateWeeklySalary()">Calculate Weekly Salary</button>
+    </section>   
 
         <!-- Monthly Salary Calculation -->
+    <section id="about" class="about-us">
         <h3>Calculate Monthly Salary</h3>
         <label for="employmentType">Select Employment Type:</label>
         <select id="employmentType">
@@ -43,15 +45,20 @@
         </select>
 
         <button class="button" onclick="calculateMonthlySalary()">Calculate Monthly Salary</button>
+    </section>  
 
         <!-- Yearly Salary Calculation -->
+    <section id="about" class="about-us">
         <h3>Calculate Yearly Salary</h3>
         <label for="weeklySalary">Enter Weekly Salary:</label>
         <input type="number" id="weeklySalary" placeholder="Weekly Salary" step="0.01">
         
         <button class="button" onclick="calculateYearlySalary()">Calculate Yearly Salary</button>
     </div>
+</section>  
 
+
+<section id="about" class="about-us">
     <div class="employee-table-container">
         <h3>Employee Information</h3>
         <table id="employeeTable">
@@ -79,7 +86,9 @@
         <button class="button" onclick="calculateTotalSalaries()">Calculate Total Salaries</button>
         <div id="totalSalariesResult"></div>
     </div>
+</section>
 
+<section id="about" class="about-us">
     <div class="result-area">
         <h3>Results</h3>
         <div class="result" id="weeklyResult"></div>
@@ -88,5 +97,7 @@
     </div>
 
     <script src="payrollscript.js"></script>
+</section>
+ 
 </body>
 </html>

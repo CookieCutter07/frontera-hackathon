@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly Rate Calculator</title>
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hourly Rate Calculator</h2>
+    <label for="hrate">Enter Hourly Rate:</label>
+    <input type="number" id="hrate" placeholder="Hourly Rate" step="0.25">
+    <button class="button" onclick="calculatePay()">Calculate Pay</button>
+    <div class="result" id="result"></div>
+
+    <script src="payrollscript.js"></script>
+</body>
+</html>

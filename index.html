@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Basic CSS styles */
+        /* Basic CSS styles   */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -152,11 +151,11 @@
     </header>
 
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#calc">Calc</a>
-        <a href="#tax">Tax</a>
-        <a href="#contact">Contact</a>
-        <a href="#chat">Chat</a>
+        <a href="about-us.html"><button>About Us</button></a>
+        <a href="calc.html"><button>Calc</button></a>
+        <a href="tax.html"><button>Tax</button></a>
+        <a href="contact.html"><button>Contact</button></a>
+        <a href="#gemini">Chat</a>
     </nav>
 
     <main>
@@ -187,38 +186,18 @@
             <p>Feel free to get in touch with us at <a href="mailto:jonathan.navarro02@gmail.com">jonathan.navarro02@gmail.com</a>.</p>
         </section>
 
-        <section id="chat" class="chat-box-container">
-            <h2>Chat with Us</h2>
-            <p>If you have any questions or need assistance, use the chat below to connect with us.</p>
-
-            <div class="chat-box">
-                <div class="chat-header">Live Chat</div>
-                <div class="chat-messages" id="chatMessages"></div>
-                <div class="chat-input">
-                    <input type="text" id="chatInput" placeholder="Type your message...">
-                    <button onclick="sendMessage()">Send</button>
-                </div>
-            </div>
+        <section id="gemini">
+            <h2>Need more help?</h2>
+            <p>Talk to Google Gemini</p>
+            <img src="gemini_image.png" alt="Google Gemini" style="width: 250px; height: auto; display: block; margin: 10px 0;">
+            <a href="geminiBot.html"><button>Gemini</button></a>
         </section>
+
     </main>
 
     <footer>
         &copy; 2024 Financable. All rights reserved.
     </footer>
-
-    <script>
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const messages = document.getElementById('chatMessages');
-            if (input.value.trim() !== '') {
-                const message = document.createElement('div');
-                message.textContent = input.value;
-                messages.appendChild(message);
-                input.value = '';
-                messages.scrollTop = messages.scrollHeight;
-            }
-        }
-    </script>
 
 </body>
 

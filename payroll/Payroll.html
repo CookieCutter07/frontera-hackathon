@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary Cost Calculator</title>
     <link rel="stylesheet" href="payroll_design.css">
-
 </head>
 <body>
     <div class="input-area">
@@ -37,6 +36,34 @@
         <input type="number" id="weeklySalary" placeholder="Weekly Salary" step="0.01">
         
         <button class="button" onclick="calculateYearlySalary()">Calculate Yearly Salary</button>
+    </div>
+
+    <div class="employee-table-container">
+        <!-- Employee Input Table -->
+        <h3>Employee Information</h3>
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                    <th>Employment Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="employeeName" placeholder="Name"></td>
+                    <td><input type="number" id="employeeSalary" placeholder="Salary" step="0.01"></td>
+                    <td>
+                        <select id="employeeType">
+                            <option value="fullTime">Full-Time</option>
+                            <option value="partTime">Part-Time</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Add Employee button -->
+        <button class="button" onclick="addEmployee()">Add Employee</button>
     </div>
 
     <div class="result-area">

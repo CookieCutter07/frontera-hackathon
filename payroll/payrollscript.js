@@ -44,3 +44,30 @@ function calculateYearlySalary() {
     const totalYearlySalary = weeklySalary * 52; // 52 weeks in a year
     document.getElementById('yearlyResult').innerText = `Total Yearly Salary: $${totalYearlySalary.toFixed(2)}`;
 }
+
+function addEmployee() {
+    const name = document.getElementById('employeeName').value;
+    const salary = parseFloat(document.getElementById('employeeSalary').value);
+    const type = document.getElementById('employeeType').value;
+
+    if (!name || isNaN(salary) || salary < 0) {
+        alert('Please enter valid employee details.');
+        return;
+    }
+
+    const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+    const newRow = tableBody.insertRow();
+
+    const nameCell = newRow.insertCell(0);
+    const salaryCell = newRow.insertCell(1);
+    const typeCell = newRow.insertCell(2);
+
+    nameCell.innerText = name;
+    salaryCell.innerText = `$${salary.toFixed(2)}`;
+    typeCell.innerText = type;
+
+    // Clear input fields
+    document.getElementById('employeeName').value = '';
+    document.getElementById('employeeSalary').value = '';
+    document.getElementById('employeeType').value = 'fullTime';
+}

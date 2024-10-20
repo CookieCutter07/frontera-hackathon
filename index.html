@@ -20,13 +20,13 @@
             justify-content: center;
             align-items: center;
             padding: 15px;
-            height: 90px; /* Adjust this height as needed */
+            height: 90px;
         }
 
         header img {
-            width: 50%; /* Makes the image stretch to fill the header */
-            height: auto; /* Maintains the aspect ratio */
-            max-height: 120px; /* Ensures the image doesn't exceed header height */
+            width: 50%;
+            height: auto;
+            max-height: 120px;
         }
 
         nav {
@@ -52,11 +52,11 @@
         }
 
         section {
-            margin-bottom: 20px; /* Ensure consistent spacing between sections */
-            padding: 20px; /* Padding inside each section for better readability */
-            background-color: white; /* Background for contrast */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         footer {
@@ -64,31 +64,82 @@
             color: white;
             text-align: center;
             padding: 10px;
-            /* Change to regular position for better flow */
         }
 
         button {
-            background-color: #28a745; /* Green background */
-            color: white; /* White text */
-            border: none; /* No border */
-            padding: 10px 20px; /* Padding */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-            font-size: 16px; /* Font size */
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         button:hover {
-            background-color: #218838; /* Darker green on hover */
+            background-color: #218838;
         }
 
         @media (max-width: 768px) {
             nav a {
-                padding: 10px; /* Reduced padding on smaller screens */
+                padding: 10px;
             }
 
             main {
-                padding: 10px; /* Reduced padding on mobile */
+                padding: 10px;
             }
+        }
+
+        /* Chat Box Styles */
+        .chat-box-container {
+            margin-top: 20px;
+        }
+
+        .chat-box {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 0;
+        }
+
+        .chat-input button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -100,25 +151,31 @@
     </header>
 
     <nav>
-        <a href="about-us.html"><button>About Us</button></a>
-        <a href="calc.html"><button>Calc</button></a>
-        <a href="tax.html"><button>Tax</button></a>
-        <a href="contact.html"><button>Contact</button></a>
+        <a href="#Calc">About Us</a> <!-- Link to About Us section -->
+        <a href="#calc">Calc</a> <!-- Ensure this matches the section ID -->
+        <a href="#Tax">Tax</a> <!-- Ensure this matches a section ID if it exists -->
+        <a href="#contact">Contact</a> <!-- Link to Contact section -->
     </nav>
 
     <main>
-        <section id="Calc" class="about-us">
+        <section id="about" class="about-us">
             <h2>About Us</h2>
-            <p>Our mission is to empower buyers by providing clear guidance on what to look for when purchasing a new or used vehicle. We aim to assist individuals who may not have extensive knowledge of cars, helping them focus on the critical details that matter most.</p>
+            <p>At Financable, our mission is to empower small businesses by providing easy-to-use financial tools that simplify complex processes. We understand the challenges that entrepreneurs face, from managing payroll to navigating tax obligations. That's why we’ve developed solutions that are accessible, practical, and tailored to meet the unique needs of small business owners.
+
+                Whether you're starting fresh or growing your business, our tools are designed to give you the financial clarity and control needed to thrive. We believe that when businesses have the right resources, they can focus more on what matters—building great products, supporting their customers, and making an impact in their communities.
+                
+                Let us take care of the financial details, so you can focus on growing your business with confidence.
+                
+            </p>
         </section>
 
         <section id="calc">
             <h2>Calc</h2>
             <p>This section can provide information on calculations related to salaries, financing options, or any other relevant content.</p>
-            <a href="Payroll.html"><button>Go to Payroll</button></a> <!-- Button linking to Payroll.html -->
+            <a href="Payroll.html"><button>Go to Payroll</button></a>
         </section>
 
-        <section id="Tax"> <!-- Ensure you have a corresponding section for this link -->
+        <section id="tax">
             <h2>Tax</h2>
             <p>This section can provide information on tax-related topics or services.</p>
         </section>
@@ -127,11 +184,39 @@
             <h2>Contact Us</h2>
             <p>Feel free to get in touch with us at <a href="mailto:jonathan.navarro02@gmail.com">jonathan.navarro02@gmail.com</a>.</p>
         </section>
+
+        <section id="chat" class="chat-box-container">
+            <h2>Chat with Us</h2>
+            <p>If you have any questions or need assistance, use the chat below to connect with us.</p>
+
+            <div class="chat-box">
+                <div class="chat-header">Live Chat</div>
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Type your message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         &copy; 2024 Financable. All rights reserved.
     </footer>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            if (input.value.trim() !== '') {
+                const message = document.createElement('div');
+                message.textContent = input.value;
+                messages.appendChild(message);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+    </script>
 
 </body>
 

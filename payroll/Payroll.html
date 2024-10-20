@@ -3,24 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay Calculator</title>
-
-    <style src= "payroll_design.css"></style>
+    <title>Salary Cost Calculator</title>
+    <link rel="stylesheet" href="payroll_design.css">
 
 </head>
 <body>
-    <h2>Hourly Rate Calculator</h2>
-    <label for="hrate">Enter Hourly Rate:</label>
-    <input type="number" id="hrate" placeholder="Hourly Rate" step="0.25">
-    <button class="button" onclick="calculatePay()">Calculate Pay</button>
-    <div class="result" id="result"></div>
+    <div class="input-area">
+        <h2>Salary Cost Calculator</h2>
 
+        <!-- Weekly Salary Calculation -->
+        <h3>Calculate Weekly Salary</h3>
+        <label for="hourlyRate">Enter Hourly Rate:</label>
+        <input type="number" id="hourlyRate" placeholder="Hourly Rate" step="0.01">
+        
+        <label for="hoursWorked">Enter Hours Worked Per Week:</label>
+        <input type="number" id="hoursWorked" placeholder="Hours Worked" step="0.01">
+        
+        <button class="button" onclick="calculateWeeklySalary()">Calculate Weekly Salary</button>
 
-    <h2>Monthly Rate Calculator</h2>
-    <label for="mrate">Enter Number of Days Worked:</label>
-    <input type="number" id="mrate" placeholder="Amount of Days Worked" step="1">
-    <button class="button" onclick="calculatePayMonthly()">Calculate Monthly Pay</button>
-    <div class="result" id="resultMonthly"></div>
+        <!-- Monthly Salary Calculation -->
+        <h3>Calculate Monthly Salary</h3>
+        <label for="employmentType">Select Employment Type:</label>
+        <select id="employmentType">
+            <option value="fullTime">Full-Time (40 hours/week)</option>
+            <option value="partTime">Part-Time (20 hours/week)</option>
+        </select>
+
+        <button class="button" onclick="calculateMonthlySalary()">Calculate Monthly Salary</button>
+
+        <!-- Yearly Salary Calculation -->
+        <h3>Calculate Yearly Salary</h3>
+        <label for="weeklySalary">Enter Weekly Salary:</label>
+        <input type="number" id="weeklySalary" placeholder="Weekly Salary" step="0.01">
+        
+        <button class="button" onclick="calculateYearlySalary()">Calculate Yearly Salary</button>
+    </div>
+
+    <div class="result-area">
+        <h3>Results</h3>
+        <div class="result" id="weeklyResult"></div>
+        <div class="result" id="monthlyResult"></div>
+        <div class="result" id="yearlyResult"></div>
+    </div>
 
     <script src="payrollscript.js"></script>
 </body>

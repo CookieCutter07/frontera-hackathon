@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hourly Rate Calculator</title>
+    <title>Pay Calculator</title>
 
     <style src= "payroll_design.css"></style>
 
@@ -15,7 +15,13 @@
     <button class="button" onclick="calculatePay()">Calculate Pay</button>
     <div class="result" id="result"></div>
 
+
+    <h2>Monthly Rate Calculator</h2>
+    <label for="mrate">Enter Number of Days Worked:</label>
+    <input type="number" id="mrate" placeholder="Amount of Days Worked" step="1">
+    <button class="button" onclick="calculatePayMonthly()">Calculate Monthly Pay</button>
+    <div class="result" id="resultMonthly"></div>
+
     <script src="payrollscript.js"></script>
-    
 </body>
 </html>

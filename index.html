@@ -68,6 +68,20 @@
             /* Change to regular position for better flow */
         }
 
+        button {
+            background-color: #28a745; /* Green background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
         @media (max-width: 768px) {
             nav a {
                 padding: 10px; /* Reduced padding on smaller screens */
@@ -88,9 +102,9 @@
 
     <nav>
         <a href="#Calc">About Us</a> <!-- Link to About Us section -->
-        <a href="#calc">Calc</a>
-        <a href="#Tax">Tax</a>
-        <a href="#contact">Contact</a>
+        <a href="#calc">Calc</a> <!-- Ensure this matches the section ID -->
+        <a href="#Tax">Tax</a> <!-- Ensure this matches a section ID if it exists -->
+        <a href="#contact">Contact</a> <!-- Link to Contact section -->
     </nav>
 
     <main>
@@ -102,6 +116,12 @@
         <section id="calc">
             <h2>Calc</h2>
             <p>This section can provide information on calculations related to salaries, financing options, or any other relevant content.</p>
+            <a href="Payroll.html"><button>Go to Payroll</button></a> <!-- Button linking to Payroll.html -->
+        </section>
+
+        <section id="Tax"> <!-- Ensure you have a corresponding section for this link -->
+            <h2>Tax</h2>
+            <p>This section can provide information on tax-related topics or services.</p>
         </section>
 
         <section id="contact">

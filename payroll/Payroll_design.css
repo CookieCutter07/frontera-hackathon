@@ -1,54 +1,37 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    display: flex;
-    justify-content: space-between; /* Space between input area and result area */
-}
-.input-area {
-    flex: 1; /* Takes up remaining space */
-    margin-right: 20px; /* Space between input area and result area */
-}
-.result-area {
-    flex: 0 0 200px; /* Fixed width for result area */
-    border-left: 1px solid #ccc; /* Optional: add a left border */
-    padding-left: 20px; /* Space inside result area */
-}
-label, input, button {
-    margin-bottom: 15px; /* Space between elements */
-    display: block; /* Makes elements stack vertically */
-    width: 100%; /* Full width for inputs and buttons */
-    max-width: 300px; /* Maximum width for inputs and buttons */
-}
-.button {
-    background-color: #4CAF50; /* Green */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.result {
-    font-weight: bold;
-    color: #333;
-}
-/* Centering the employee table */
-.employee-table-container {
-    display: flex;
-    flex-direction: column; /* Stack the table and button */
-    align-self: center; /* Center align the contents */
-    margin: 20px; /* Space around the container */
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    max-width: 600px; /* Maximum width for the table */
-    margin-right: 250px;
-}
-th, td {
-    border: 1px solid #ccc;
-    padding: 20px;
-    text-align: left;
-}
-th {
-    background-color: #f4f4f4;
-}
+    body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .input-area, .result-area, .employee-table-container {
+            flex: 1;
+            margin: 20px;
+        }
+        .employee-table-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            max-width: 600px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }

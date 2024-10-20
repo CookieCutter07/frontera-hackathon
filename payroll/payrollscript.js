@@ -71,3 +71,18 @@ function addEmployee() {
     document.getElementById('employeeSalary').value = '';
     document.getElementById('employeeType').value = 'fullTime';
 }
+
+function calculateTotalSalaries() {
+    const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+    const rows = tableBody.getElementsByTagName('tr');
+    let total = 0;
+
+    for (let i = 0; i < rows.length; i++) {
+        const salaryCell = rows[i].cells[1].innerText; // Get the salary cell
+        const salaryValue = parseFloat(salaryCell.replace(/[$,]/g, '')); // Remove $ and convert to number
+        total += salaryValue; // Sum up the salaries
+    }
+
+    // Display the total salaries
+    document.getElementById('totalSalariesResult').innerText = `Total Salaries: $${total.toFixed(2)}`;
+}

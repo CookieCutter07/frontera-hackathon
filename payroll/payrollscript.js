@@ -1,34 +1,46 @@
-function calculatePay() {
-    // Get the hourly rate from the input field
-    const hourlyRate = parseFloat(document.getElementById('hrate').value);
-    const hoursWorked = 40;
+function calculateWeeklySalary() {
+    const hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
+    const hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
 
-    // Check if the hourly rate is a valid number
-    if (isNaN(hourlyRate) || hourlyRate < 0) {
-        document.getElementById('result').innerText = 'Please enter a valid hourly rate.';
+    if (isNaN(hourlyRate) || isNaN(hoursWorked) || hourlyRate < 0 || hoursWorked < 0) {
+        document.getElementById('weeklyResult').innerText = 'Please enter valid values.';
         return;
     }
 
-    // Calculate the total pay
-    const totalPay = hourlyRate * hoursWorked;
-
-    // Display the result
-    document.getElementById('result').innerText = `Total Pay for ${hoursWorked} hours: $${totalPay.toFixed(2)}`;
+    const totalWeeklySalary = hourlyRate * hoursWorked;
+    document.getElementById('weeklyResult').innerText = `Total Weekly Salary: $${totalWeeklySalary.toFixed(2)}`;
 }
 
-function calculatePayMonthly() {
-    const weeklyRate = parseFloat(document.getElementById('mrate').value);
-    const weeksInMonth = 4; // Assuming 4 weeks in a month
 
-    // Check if the weekly rate is a valid number
-    if (isNaN(weeklyRate) || weeklyRate < 0) {
-        document.getElementById('resultMonthly').innerText = 'Please enter a valid weekly rate.';
+function calculateMonthlySalary() {
+    const hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
+    const employmentType = document.getElementById('employmentType').value;
+
+    if (isNaN(hourlyRate) || hourlyRate < 0) {
+        document.getElementById('monthlyResult').innerText = 'Please enter a valid hourly rate.';
         return;
     }
 
-    // Calculate the total monthly pay
-    const totalPayMonthly = weeklyRate * weeksInMonth;
+    let hoursWorkedPerWeek;
+    if (employmentType === "fullTime") {
+        hoursWorkedPerWeek = 40; // Full-time hours
+    } else {
+        hoursWorkedPerWeek = 20; // Part-time hours
+    }
 
-    // Display the result
-    document.getElementById('resultMonthly').innerText = `Total Pay for ${weeksInMonth} weeks: $${totalPayMonthly.toFixed(2)}`;
+    const totalMonthlySalary = hourlyRate * hoursWorkedPerWeek * 4.33; // Approximate weeks in a month
+    document.getElementById('monthlyResult').innerText = `Total Monthly Salary: $${totalMonthlySalary.toFixed(2)}`;
+}
+
+
+function calculateYearlySalary() {
+    const weeklySalary = parseFloat(document.getElementById('weeklySalary').value);
+
+    if (isNaN(weeklySalary) || weeklySalary < 0) {
+        document.getElementById('yearlyResult').innerText = 'Please enter a valid weekly salary.';
+        return;
+    }
+
+    const totalYearlySalary = weeklySalary * 52; // 52 weeks in a year
+    document.getElementById('yearlyResult').innerText = `Total Yearly Salary: $${totalYearlySalary.toFixed(2)}`;
 }

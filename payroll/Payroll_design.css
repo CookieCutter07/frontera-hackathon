@@ -1,17 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between; /* Space between input area and result area */
+}
+.input-area {
+    flex: 1; /* Takes up remaining space */
+    margin-right: 20px; /* Space between input area and result area */
+}
+.result-area {
+    flex: 0 0 200px; /* Fixed width for result area */
+    border-left: 1px solid #ccc; /* Optional: add a left border */
+    padding-left: 20px; /* Space inside result area */
+}
+label, input, button {
+    margin-bottom: 15px; /* Space between elements */
+    display: block; /* Makes elements stack vertically */
+}
 .button {
     background-color: #4CAF50; /* Green */
-    border: none;
     color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 0;
+    padding: 10px 15px;
+    border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 .result {
-    margin-top: 10px;
-    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }

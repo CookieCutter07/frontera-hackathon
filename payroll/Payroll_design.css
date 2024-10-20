@@ -1,9 +1,4 @@
-    body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: space-between;
-            margin: 20px;
-        }
+
         .input-area, .result-area, .employee-table-container {
             flex: 1;
             margin: 20px;
@@ -34,4 +29,87 @@
             cursor: pointer;
             border-radius: 5px;
             margin-top: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #979797;
+        }
+
+        header {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            height: 90px;
+        }
+
+        header img {
+            width: 50%;
+            height: auto;
+            max-height: 120px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: rgb(235, 235, 235);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: rgb(196, 196, 196);
+            text-align: center;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
         }

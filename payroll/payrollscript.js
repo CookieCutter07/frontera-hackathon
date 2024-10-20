@@ -80,7 +80,11 @@ function calculateTotalSalaries() {
     for (let i = 0; i < rows.length; i++) {
         const salaryCell = rows[i].cells[1].innerText; // Get the salary cell
         const salaryValue = parseFloat(salaryCell.replace(/[$,]/g, '')); // Remove $ and convert to number
-        total += salaryValue; // Sum up the salaries
+        
+        // Only add to total if salaryValue is a valid number
+        if (!isNaN(salaryValue)) {
+            total += salaryValue; // Sum up the salaries
+        }
     }
 
     // Display the total salaries

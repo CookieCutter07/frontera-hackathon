@@ -12,11 +12,6 @@
             margin: 0;
             padding: 0;
             background-color: #979797;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
 
         header {
@@ -26,7 +21,6 @@
             align-items: center;
             padding: 15px;
             height: 90px;
-            width: 100%;
         }
 
         header img {
@@ -39,33 +33,22 @@
             display: flex;
             justify-content: center;
             background-color: #444;
-            width: 100%;
         }
 
         nav a {
             color: white;
+            padding: 15px 20px;
             text-decoration: none;
         }
 
-        button {
-            margin: 10px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #218838;
+        nav a:hover {
+            background-color: #555;
         }
 
         main {
             padding: 20px;
-            width: 100%;
-            max-width: 600px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         section {
@@ -81,40 +64,29 @@
             color: rgb(196, 196, 196);
             text-align: center;
             padding: 10px;
-            width: 100%;
         }
 
-        .input-container {
-            margin-bottom: 10px;
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        #revenueResult {
-            margin-top: 15px;
-            font-weight: bold;
-            text-align: center;
+        button:hover {
+            background-color: #218838;
         }
 
         @media (max-width: 768px) {
-            main {
+            nav a {
                 padding: 10px;
             }
 
-            nav button {
-                font-size: 14px;
-                padding: 8px 16px;
+            main {
+                padding: 10px;
             }
         }
     </style>

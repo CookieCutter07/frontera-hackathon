@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financable</title>
+    <style>
+        /* Basic CSS styles   */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #979797;
+        }
+
+        header {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            height: 90px;
+        }
+
+        header img {
+            width: 50%;
+            height: auto;
+            max-height: 120px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: rgb(235, 235, 235);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: rgb(196, 196, 196);
+            text-align: center;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.png" alt="My Website Logo">
+    </header>
+
+    <nav>
+        <a href="index.html"><button>Home</button></a>
+        <a href="calc.html"><button>Calculator</button></a>
+        <a href="revenue.html"><button>Revenue</button></a>
+        <a href="contact.html"><button>Contact</button></a>
+        <a href="geminiBot.html"><button>Gemini</button></a>
+    </nav>
+
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        #revenueResult {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Simple Revenue Calculator</h2>
+
+<div class="input-container">
+    <label for="employeeExpenses">Employee Salaries / Expenses ($):</label>
+    <input type="number" id="employeeExpenses" placeholder="Enter total employee expenses" step="0.01">
+</div>
+
+<div class="input-container">
+    <label for="businessExpenses">Business Purchases / Expenses ($):</label>
+    <input type="number" id="businessExpenses" placeholder="Enter total business expenses" step="0.01">
+</div>
+
+<div class="input-container">
+    <label for="profits">Profits / Income ($):</label>
+    <input type="number" id="profits" placeholder="Enter total profits" step="0.01">
+</div>
+
+<button class="button" onclick="calculateRevenue()">Calculate Revenue</button>
+
+<div id="revenueResult"></div>
+
+<script>
+    function calculateRevenue() {
+        const employeeExpenses = parseFloat(document.getElementById('employeeExpenses').value) || 0;
+        const businessExpenses = parseFloat(document.getElementById('businessExpenses').value) || 0;
+        const profits = parseFloat(document.getElementById('profits').value) || 0;
+
+        const totalExpenses = employeeExpenses + businessExpenses;
+        const totalRevenue = profits - totalExpenses;
+
+        document.getElementById('revenueResult').innerText =
+            `Total Revenue: $${totalRevenue.toFixed(2)}`;
+    }
+</script>
+
+
+
+
+</body>
+</html>
